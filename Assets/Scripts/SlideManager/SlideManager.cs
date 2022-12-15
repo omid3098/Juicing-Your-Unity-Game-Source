@@ -43,6 +43,13 @@ public class SlideManager : MonoBehaviour
             slides.Add(slide);
         }
         currentSlideIndex = 0;
+
+        // Hide all other slides
+        foreach (var _slide in _slides)
+        {
+            _slide.gameObject.SetActive(false);
+        }
+
         // show first slide
         slides[currentSlideIndex].Show(
             () => Debug.Log("Show complete " + slides[currentSlideIndex].name)
