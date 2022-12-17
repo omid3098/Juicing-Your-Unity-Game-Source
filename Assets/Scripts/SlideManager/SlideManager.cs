@@ -64,11 +64,11 @@ public class SlideManager : MonoBehaviour
             Debug.Log("Trying to hide " + slides[currentSlideIndex].name);
             slides[currentSlideIndex].Hide(() =>
             {
-                Debug.Log("Hide complete " + slides[currentSlideIndex].name);
+                // Debug.Log("Hide complete " + slides[currentSlideIndex].name);
                 currentSlideIndex--;
                 if (currentSlideIndex < 0) currentSlideIndex = slides.Count - 1;
                 slides[currentSlideIndex].Show(
-                    () => Debug.Log("Show complete " + slides[currentSlideIndex].name)
+                // () => Debug.Log("Show complete " + slides[currentSlideIndex].name)
                 );
             });
         }
@@ -78,11 +78,11 @@ public class SlideManager : MonoBehaviour
             Debug.Log("Trying to hide " + slides[currentSlideIndex].name);
             slides[currentSlideIndex].Hide(() =>
             {
-                Debug.Log("Hide complete " + slides[currentSlideIndex].name);
+                // Debug.Log("Hide complete " + slides[currentSlideIndex].name);
                 currentSlideIndex++;
                 if (currentSlideIndex >= slides.Count) currentSlideIndex = 0;
                 slides[currentSlideIndex].Show(
-                    () => Debug.Log("Show complete " + slides[currentSlideIndex].name)
+                // () => Debug.Log("Show complete " + slides[currentSlideIndex].name)
                 );
             });
         }
@@ -100,13 +100,13 @@ public class SlideManager : MonoBehaviour
             if (Input.GetKeyDown(keyCode.key))
             {
                 // Hide current slide and show next slide when hide is complete
-                Debug.Log("Trying to hide " + slides[currentSlideIndex].name);
+                // Debug.Log("Trying to hide " + slides[currentSlideIndex].name);
                 slides[currentSlideIndex].Hide(() =>
                 {
-                    Debug.Log("Hide complete " + slides[currentSlideIndex].name);
+                    // Debug.Log("Hide complete " + slides[currentSlideIndex].name);
                     currentSlideIndex = keyCode.slideIndex;
                     slides[currentSlideIndex].Show(
-                        () => Debug.Log("Show complete " + slides[currentSlideIndex].name)
+                    // () => Debug.Log("Show complete " + slides[currentSlideIndex].name)
                     );
                 });
             }
