@@ -1,5 +1,6 @@
 using System;
 using BrunoMikoski.AnimationSequencer;
+using NaughtyAttributes;
 using UnityEngine;
 using static BrunoMikoski.AnimationSequencer.AnimationSequencerController;
 
@@ -44,4 +45,20 @@ public class Slide : MonoBehaviour
             onComplete?.Invoke();
         });
     }
+
+#if UNITY_EDITOR
+    [Button]
+    void Show()
+    {
+        // Find all slides in the scene
+        var slides = FindObjectsOfType<Slide>();
+        // Hide all slides
+        foreach (var slide in slides)
+        {
+            slide.gameObject.SetActive(false);
+        }
+        // Show this slide
+        gameObject.SetActive(true);
+    }
+#endif
 }

@@ -31,7 +31,7 @@ public class SlideManager : MonoBehaviour
     };
 
     private List<Slide> slides;
-    private int currentSlideIndex;
+    [SerializeField] int currentSlideIndex = 0;
 
     private void Awake()
     {
@@ -42,7 +42,6 @@ public class SlideManager : MonoBehaviour
         {
             slides.Add(slide);
         }
-        currentSlideIndex = 0;
 
         // Hide all other slides
         foreach (var _slide in _slides)
