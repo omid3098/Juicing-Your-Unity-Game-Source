@@ -1,6 +1,4 @@
 using DG.Tweening;
-using DG.Tweening.Core;
-using DG.Tweening.Plugins.Options;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -11,6 +9,10 @@ using UnityEngine;
 // Scale
 // OnComplete callback
 // Backwards (.SetAutoKill(false))
+// Shake (good values for a small camera shake: DOShakePosition(0.2f, 0.2f, 100, 45, false))
+// Int/Float:
+// float angle = 0;
+// DOTween.To(() => angle, x => angle = x, 360, 1f);
 
 [ExecuteInEditMode]
 public class LiveExample : MonoBehaviour
@@ -22,6 +24,7 @@ public class LiveExample : MonoBehaviour
     {
         // transform.position = m_TargetPosition;
         transform.DOMove(m_TargetPosition, 1f);
+
     }
 
     [Button]
