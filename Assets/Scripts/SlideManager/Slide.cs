@@ -4,7 +4,6 @@ using NaughtyAttributes;
 using UnityEngine;
 using static BrunoMikoski.AnimationSequencer.AnimationSequencerController;
 
-
 public class Slide : MonoBehaviour
 {
     // This class is the base class for all slides
