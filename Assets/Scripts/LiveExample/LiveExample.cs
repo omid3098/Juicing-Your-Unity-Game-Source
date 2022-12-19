@@ -1,4 +1,6 @@
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -17,13 +19,23 @@ using UnityEngine;
 public class LiveExample : MonoBehaviour
 {
     [SerializeField] Vector3 m_TargetPosition = new Vector3(3, 0, 0);
+    private TweenerCore<Vector3, Vector3, VectorOptions> tween;
 
     [Button]
     private void Move()
     {
         // transform.position = m_TargetPosition;
-        transform.DOMove(m_TargetPosition, 1f);
+        tween = transform.DOMove(m_TargetPosition, 1f).SetEase(Ease.InOutSine).SetAutoKill(false);
+    }
 
+    [Button]
+    private void CameraShake()
+    {
+        float angle = 0;
+        DOTween.To(() => angle, x => angle = x, 360, 1f).OnUpdate(() =>
+        {
+            Debug.Log(angle);
+        });
     }
 
     [Button]
