@@ -14,7 +14,6 @@ using UnityEngine;
 // float angle = 0;
 // DOTween.To(() => angle, x => angle = x, 360, 1f);
 
-[ExecuteInEditMode]
 public class LiveExample : MonoBehaviour
 {
     [SerializeField] Vector3 m_TargetPosition = new Vector3(3, 0, 0);
